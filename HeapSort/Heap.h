@@ -15,7 +15,7 @@ public:
 	int GetParent(int index);
 	int GetRight(int index);
 	int GetLeft(int rignt);
-	int GetSize(array<int, 11> testcase);
+	int GetSize();
 	void printArray();
 private:
 	void MaxHeapify(array<int,11>& testcase, int index);
