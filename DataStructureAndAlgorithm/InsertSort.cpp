@@ -16,7 +16,12 @@ int main()
 	return 0;
 }
 
-
+/**
+ * InsertSort()
+ * 
+ * 배열에 삽입정렬을 실행하는 함수
+ * 
+ */
 void InsertSort(array<int,5>& testCase)
 {
 	for (int j =  1; j < testCase.size(); j++)
