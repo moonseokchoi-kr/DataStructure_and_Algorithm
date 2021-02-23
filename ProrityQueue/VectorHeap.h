@@ -1,5 +1,7 @@
 #pragma once
 #include <vector>
+#include <random>
+#include <iostream>
 using namespace std;
 class VectorHeap
 {
@@ -15,11 +17,11 @@ public:
 	int GetSize();
 	void printArray();
 private:
-	void MaxHeapify();
+	void MaxHeapify(vector<int>& testcase, int index);
 	void BuildMaxHeap();
-	void BuildMaxHeap();
+	void BuildMaxHeap(vector<int>& testcase);
 private:
 	vector<int> h;
-	int size;
+	int size ;
 };
 
