@@ -41,7 +41,7 @@ void Heap::MaxHeapify(array<int, 11>& testcase, int index)
 	//영향을 주지 않기 위해서 -1로 초기화
 	int largest = -1;
 	//l이 배열의 길이보다 작고, 시작지점보다 클때
-	if (l <= testcase.size() && (testcase[l] >= testcase[index]))
+	if (l <= size && (testcase[l] >= testcase[index]))
 	{
 		largest = l;
 	}
@@ -50,7 +50,7 @@ void Heap::MaxHeapify(array<int, 11>& testcase, int index)
 		largest = index;
 	}
 	//r이 배열의 길이보다 작고, 서브트리에서 큰값과 비교
-	if (r <= testcase.size() &&(testcase[r] > testcase[largest]))
+	if (r <= size &&(testcase[r] > testcase[largest]))
 	{
 		largest = r;
 	}
@@ -100,6 +100,20 @@ void Heap::BuildMaxHeap(array<int, 11>& testcase)
 
 void Heap::HeapSort()
 {
+	//힙정렬은 최대힙인 상태에서 진행되어야한다. 생성자가 최대힙을 생성함으로 만드는과정은 생략
+
+	for (int i = h.size()-1; i > 1; i--)
+	{
+		//h[1]과 h[i]를 교환
+		int tmp = h[i];
+		h[i] = h[1];
+		h[1] = tmp;
+		//정렬이 완료된 값제외
+		size -= 1;
+		//다시 최대힙 특성유지
+		MaxHeapify(h, 1);
+
+	}
 }
 
 
@@ -123,7 +137,7 @@ int Heap::GetLeft(int index)
 
 int Heap::GetSize()
 {
-	return h.size();
+	return size;
 }
 
 void Heap::printArray()

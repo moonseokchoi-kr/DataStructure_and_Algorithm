@@ -6,6 +6,12 @@
 int main()
 {
 	Heap *heap = new Heap();
+	//최대힙 출력
+	heap->printArray();
 
+	//힙정렬진행
+	heap->HeapSort();
+
+	//결과출력
 	heap->printArray();
 }
