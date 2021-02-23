@@ -2,15 +2,28 @@
 //
 #include "VectorHeap.h"
 #include <iostream>
-
+#include <string>
+using namespace std;
 int main()
 {
 	VectorHeap* vh = new VectorHeap();
 
 	vh->printArray();
 
-	vh->HeapSort();
+	//vh->HeapSort();
 
-	vh->printArray();
+	//vh->printArray();
+
+	//우선순위 큐함수들 이용
+	
+	cout << "Priority Queue\n" << endl;
+	cout<<"MaxValue: "+to_string(vh->Maximum())<<endl;
+
+	cout << "Extract Max: " + to_string(vh->ExtractMax()) << endl;
+
+	cout << "New MaxValue: " + to_string(vh->Maximum()) << endl;
+
+	
+	
 }
 

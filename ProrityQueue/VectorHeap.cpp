@@ -8,6 +8,8 @@ VectorHeap::VectorHeap()
 
 VectorHeap::VectorHeap(vector<int>& testcase)
 {
+	h = testcase;
+	BuildMaxHeap(h);
 }
 
 VectorHeap::~VectorHeap()
@@ -69,6 +71,32 @@ void VectorHeap::printArray()
 }
 
 
+int VectorHeap::Maximum()
+{
+	return h[1];
+}
+
+int VectorHeap::ExtractMax()
+{
+	if (size < 1)
+	{
+		cout << "Heap Underflow" << endl;
+		return -1;
+	}
+	int max = h[1];
+	h[1] = h[size];
+	size -= 1;
+	MaxHeapify(h, 1);
+	return max;
+}
+
+void VectorHeap::InsertKey(int index, int key)
+{
+	size += 1;
+	h.push_back(numeric_limits<int>::min());
+	IncreaseKey(size, key);
+}
+
 void VectorHeap::MaxHeapify(vector<int>& testcase, int index)
 {
 	int l = GetLeft(index);
@@ -120,5 +148,23 @@ void VectorHeap::BuildMaxHeap(vector<int>& testcase)
 	for (int i = size / 2; i > 0; i-- )
 	{
 		MaxHeapify(h, i);
+	}
+}
+
+void VectorHeap::IncreaseKey(int index, int key)
+{
+	if (key < h[index])
+	{
+		cout << "new key is smaller than original key" << endl;
+		return;
+	}
+	h[index] = key;
+	while (index > 1 && (h[GetParent(index)] < h[index]))
+	{
+		int tmp = h[index];
+		h[index] = h[GetParent(index)];
+		h[GetParent(index)] = tmp;
+
+		index = GetParent(index);
 	}
 }

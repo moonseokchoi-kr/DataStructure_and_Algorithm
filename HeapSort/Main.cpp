@@ -14,4 +14,6 @@ int main()
 
 	//결과출력
 	heap->printArray();
+
+
 }
