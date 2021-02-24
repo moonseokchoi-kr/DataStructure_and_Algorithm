@@ -19,6 +19,8 @@ int main()
 	cout << "Priority Queue\n" << endl;
 	cout<<"MaxValue: "+to_string(vh->Maximum())<<endl;
 
+
+
 	cout << "Extract Max: " + to_string(vh->ExtractMax()) << endl;
 
 	cout << "New MaxValue: " + to_string(vh->Maximum()) << endl;
