@@ -11,3 +11,6 @@
 
 > + 최대힙 & 우선순위 큐 & 힙정렬
 >> https://www.notion.so/Heap-848a5e9c19884aeb8dcd9abbebaa2109
+
+> + 퀵정렬
+>> https://www.notion.so/Quick-Sort-65ebd70b02ff4036bfdc22ae2de28193
