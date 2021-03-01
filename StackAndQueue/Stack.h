@@ -1,9 +1,7 @@
 #pragma once
-#include <vector>
-#include <iostream>
-#include <random>
+#include "Collection.h"
 using namespace std;
-class Stack
+class Stack : public Collection
 {
 public:
 	Stack();
@@ -11,10 +9,8 @@ public:
 	bool IsEmpty();
 	void Push(int value);
 	int Pop();
-	void makeTestCase(vector<int>& v);
-	void printAnswer();
 private:
 	int top;
-	vector<int> v;
+	//vector<int> v;
 };
 

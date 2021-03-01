@@ -2,9 +2,9 @@
 
 Stack::Stack()
 {
-	v.assign(1, 0);
-	top = 1;
-	makeTestCase(v);
+	
+	makeTestCase(GetVectorPointer());
+	top = GetVectorPointer().size() - 1;
 }
 
 Stack::~Stack()
@@ -23,7 +23,7 @@ bool Stack::IsEmpty()
 void Stack::Push(int value)
 {
 	top += 1;
-	v.push_back(value);
+	GetVectorPointer().push_back(value);
 }
 
 int Stack::Pop()
@@ -32,35 +32,10 @@ int Stack::Pop()
 		return -1;
 	else 
 	{	
-		int tmp = v.at(top);
-		v.pop_back();
+		int tmp = GetVectorPointer().at(top);
+		GetVectorPointer().pop_back();
 		top -= 1;
 
 		return tmp;
 	}
-}
-
-void Stack::makeTestCase(vector<int>& v)
-{
-	v.assign(1, 0);
-	random_device rd;
-	mt19937_64 rng1(rd());
-	uniform_int_distribution<__int32> dist(1, 100);
-
-	for (int i = 1; i < 11; i++)
-	{
-		v.push_back(dist(rng1));
-		top = i;
-	}
-}
-
-
-void Stack::printAnswer()
-{
-	for (int i = 1; i < v.size(); i++)
-	{
-		cout << v[i];
-		cout << " ";
-	}
-	cout << endl;
 }
