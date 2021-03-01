@@ -12,7 +12,7 @@ public:
 	void Push(int value);
 	int Pop();
 	void makeTestCase(vector<int>& v);
-	void printAnswer(vector<int> v);
+	void printAnswer();
 private:
 	int top;
 	vector<int> v;

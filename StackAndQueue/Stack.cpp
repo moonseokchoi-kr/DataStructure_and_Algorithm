@@ -4,6 +4,7 @@ Stack::Stack()
 {
 	v.assign(1, 0);
 	top = 1;
+	makeTestCase(v);
 }
 
 Stack::~Stack()
@@ -30,10 +31,12 @@ int Stack::Pop()
 	if (IsEmpty())
 		return -1;
 	else 
-	{
+	{	
+		int tmp = v.at(top);
 		v.pop_back();
 		top -= 1;
 
+		return tmp;
 	}
 }
 
@@ -47,11 +50,12 @@ void Stack::makeTestCase(vector<int>& v)
 	for (int i = 1; i < 11; i++)
 	{
 		v.push_back(dist(rng1));
+		top = i;
 	}
 }
 
 
-void Stack::printAnswer(vector<int> v)
+void Stack::printAnswer()
 {
 	for (int i = 1; i < v.size(); i++)
 	{
