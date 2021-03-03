@@ -1,5 +1,11 @@
 #pragma once
-#include "Node.h"
+
+typedef struct Node
+{
+	int key;
+	Node* prev;
+	Node* next;
+};
 class LinkedList
 {
 public:
@@ -7,9 +13,13 @@ public:
 	~LinkedList();
 
 	Node* Search(int k);
-	void Insert(Node x);
-	void Delete(Node x);
+	void Insert(int k);
+	void Delete(int k);
+	Node* GetNext();
+	Node* GetPrev();
+	Node* Get();
 private:
-	Node nil;
+	Node* cur;
+	Node* head;
 };
 
