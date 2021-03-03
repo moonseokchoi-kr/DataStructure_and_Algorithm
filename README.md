@@ -14,3 +14,9 @@
 
 > + 퀵정렬
 >> https://www.notion.so/Quick-Sort-65ebd70b02ff4036bfdc22ae2de28193
+
+> + Stack and Queue
+>> https://www.notion.so/Stack-Queue-8bb7187637ce4ac087bb9bdfb6f1d581
+
+> + Linked List
+>> https://www.notion.so/LinkedList-3062f6d4d63a46808a1ab2b706c0cda8
