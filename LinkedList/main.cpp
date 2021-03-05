@@ -22,6 +22,35 @@ int main()
 		list->GetNext();
 	}
 	cout << endl;
+	list->goFirst();
+	list->Delete(4);
+
+	while (list->Get() != nullptr)
+	{
+		cout << to_string(list->Get()->key) + " ";
+		list->GetNext();
+	}
+
+	LinkedList* circleList = new LinkedList();
+	for (int i = 1; i < v.size(); i++)
+	{
+		circleList->CircleInsert(i);
+	}
+	while (circleList->Get() != circleList->nil)
+	{
+		cout << to_string(circleList->Get()->key) + " ";
+		circleList->GetNext();
+	}
+	cout << endl;
+	circleList->Delete(3);
+
+	while (circleList->Get() != circleList->nil)
+	{
+		cout << to_string(circleList->Get()->key) + " ";
+		circleList->GetNext();
+	}
+
+
 
 }
 void makeTestCase(vector<int>& v)
