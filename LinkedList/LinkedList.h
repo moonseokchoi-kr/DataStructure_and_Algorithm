@@ -27,6 +27,6 @@ public:
 private:
 	Node* cur;
 	Node* head;
-	
+	Node* tail;
 };
 

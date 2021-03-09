@@ -36,6 +36,7 @@ int main()
 	{
 		circleList->CircleInsert(i);
 	}
+
 	while (circleList->Get() != circleList->nil)
 	{
 		cout << to_string(circleList->Get()->key) + " ";
