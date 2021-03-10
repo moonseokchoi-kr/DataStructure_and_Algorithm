@@ -52,7 +52,7 @@ void LinkedList::CircleInsert(int k)
 	Node * x = new Node();
 	if (head != nullptr)
 	{
-		x->key = k;
+		x->key = k; 
 		x->next = nil->next;
 		nil->next->prev = x;
 		nil->next = x;
